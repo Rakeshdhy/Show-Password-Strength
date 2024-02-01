@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="global.css">
+
+
+</head>
+
+<body>
+    <div class="input-box">
+        <input type="password" placeholder="Password" id="password">
+        <button type="submit"><img src="images/arrow.png" alt=""></button>
+
+        <p id="message">Password <span id="strenght"></span></p>
+
+    </div>
+
+
+
+
+
+    <script>
+
+        let userPassword = document.getElementById("password");
+        let userMsg = document.getElementById("message");
+        let str = document.getElementById("strenght");
+
+
+        userPassword.addEventListener("input", () => {
+            if (userPassword.value.length > 0) {
+                userMsg.style.display = " block";
+            }
+            else {
+                userMsg.style.display = " none";
+            }
+            if (userPassword.value.length < 4) {
+                str.innerHTML = " Weak";
+                password.style.borderColor = "red";
+                userMsg.style.color = "red";
+
+
+            }
+            else if (userPassword.value.length >= 4 && userPassword.value.length < 8) {
+                str.innerHTML = " Medium";
+                password.style.borderColor = "orange";
+                userMsg.style.color = "orange";
+
+
+
+
+            }
+            else if (userPassword.value.length >= 8) {
+                str.innerHTML = "Strong";
+                password.style.borderColor = "green";
+                userMsg.style.color = "green";
+
+
+
+
+
+            }
+
+        })
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
